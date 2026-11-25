@@ -26,7 +26,7 @@ import { usePerfNotices } from '../components/perf-notices/use-perf-notices'
 import { useVisibleHostedReviewRefresh } from '../store/slices/hosted-review/refresh/use-visible-hosted-review-refresh'
 import { useProfileStateSaveDelayNotice } from './storage/use-profile-state-save-delay-notice'
 import { useBotHomeTabPlacement } from '../components/bots/bot-home-tab-placement'
-import { useUnsavedEditorHostReport } from '../runtime/workspace-cleanup/unsaved-editor-host-report'
+import { useRemoteUnsavedEditorReport } from '../runtime/workspace-cleanup/remote-unsaved-editor-report'
 
 /** Keep subscriptions above surfaces that unmount or never appear on Landing. */
 export function useAppShellServices(): void {
@@ -46,7 +46,7 @@ export function useAppShellServices(): void {
   useIpcEvents()
   useProfileStateSaveDelayNotice()
   useRemoteRuntimeRecoveryTriggers()
-  useUnsavedEditorHostReport()
+  useRemoteUnsavedEditorReport()
   useVisibleHostedReviewRefresh({ enabled: workspaceSessionReady })
   useTerminalViewerColorPublication()
   useReadOnScreenAttention()
